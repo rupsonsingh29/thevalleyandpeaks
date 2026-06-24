@@ -1,0 +1,1 @@
+document.addEventListener(`DOMContentLoaded`,()=>{let e=document.querySelector(`.menu-toggle`),t=document.querySelector(`.site-nav__list`);e&&t&&e.addEventListener(`click`,()=>{t.classList.toggle(`is-open`)})});
