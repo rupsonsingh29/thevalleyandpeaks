@@ -1,33 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-  --color-white: #FFFFFF;
+    --color-white: #FFFFFF;
 
     /* Backgrounds */
-    --color-bg: #F5F3EF;          /* Warm White */
-    --color-bg-alt: #EEE8E0;      /* Slightly darker warm white */
+    --color-bg: #F5F3EF;
+    /* Warm White */
+    --color-bg-alt: #EEE8E0;
+    /* Slightly darker warm white */
 
     /* Dark text */
-    --color-charcoal: #111111;    /* Brand Charcoal */
+    --color-charcoal: #111111;
+    /* Brand Charcoal */
     --color-charcoal-light: #333333;
 
     /* Secondary text */
-    --color-muted: #6B6B6B;       /* Slate */
+    --color-muted: #6B6B6B;
+    /* Slate */
 
     /* Borders */
-    --color-border: #D8C3A5;      /* Sand */
+    --color-border: #D8C3A5;
+    /* Sand */
 
     /* Primary accent */
-    --color-earth: #E30613;       /* Primary Red */
-    --color-earth-dark: #B80510;  /* Darker Red */
+    --color-earth: #E30613;
+    /* Primary Red */
+    --color-earth-dark: #B80510;
+    /* Darker Red */
 
     /* Secondary accent */
-    --color-green: #2D3A2F;       /* Forest Green */
-    --color-green-light: #445647; /* Lighter Forest Green */
+    --color-green: #2D3A2F;
+    /* Forest Green */
+    --color-green-light: #445647;
+    /* Lighter Forest Green */
 
     /* Neutral accent */
-    --color-beige: #D8C3A5;       /* Sand */
-    --color-beige-light: #E8DCCB; /* Lighter Sand */
+    --color-beige: #D8C3A5;
+    /* Sand */
+    --color-beige-light: #E8DCCB;
+    /* Lighter Sand */
 
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -209,7 +220,7 @@ h4 {
 .search-form {
     /* display: flex;
     align-items: center; */
-     width: 0;
+    width: 0;
     overflow: hidden;
     transition: width 0.3s ease, opacity 0.3s ease;
     opacity: 0;
@@ -317,7 +328,7 @@ h4 {
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var( --color-beige-light);
+    color: var(--color-beige-light);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -536,10 +547,25 @@ h4 {
 
 /* Breadcrumbs */
 .breadcrumbs {
-    padding: var(--spacing-sm) 0;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: white;
+    padding: var(--spacing-sm) 1.5rem;
     font-size: 0.8125rem;
     color: var(--color-muted);
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+
 }
+
+.breadcrumbs.hidden {
+    transform: translateY(-100%);
+}
+
+
 
 .breadcrumbs ol {
     display: flex;
