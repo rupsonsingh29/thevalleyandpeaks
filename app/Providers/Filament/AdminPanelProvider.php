@@ -49,18 +49,18 @@ class AdminPanelProvider extends PanelProvider
                 FilamentInfoWidget::class,
             ])
             ->middleware([
-                EncryptCookies::class,
-                AddQueuedCookiesToResponse::class,
-                StartSession::class,
-                AuthenticateSession::class,
-                ShareErrorsFromSession::class,
-                PreventRequestForgery::class,
-                SubstituteBindings::class,
-                DisableBladeIconComponents::class,
-                DispatchServingFilamentEvent::class,
-            ])
+                            EncryptCookies::class,
+                            AddQueuedCookiesToResponse::class,
+                            StartSession::class,
+                            AuthenticateSession::class,
+                            ShareErrorsFromSession::class,
+                            PreventRequestForgery::class,
+                            SubstituteBindings::class,
+                            DisableBladeIconComponents::class,
+                            DispatchServingFilamentEvent::class,
+                        ])
             ->authMiddleware([
-                Authenticate::class,
-            ]);
+                            Authenticate::class,
+                        ]);
     }
 }
