@@ -46,3 +46,4 @@ Route::get('/disclaimer', fn () => app(PageController::class)->show(
 Route::get('/affiliate-disclosure', fn () => app(PageController::class)->show(
     \App\Models\Page::where('slug', 'affiliate-disclosure')->firstOrFail()
 ))->name('affiliate');
+

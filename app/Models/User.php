@@ -36,4 +36,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return true; // or: return $this->is_admin;
     }
+
+    public function getTimezone(): string
+    {
+        return config('app.timezone', 'UTC');
+    }
 }

@@ -6,6 +6,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -13,7 +14,6 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 
 class ArticleForm
 {
@@ -33,11 +33,11 @@ class ArticleForm
                     'underline',
                     'strike', 'superscript', 'subscript', 'link',
                     [ToolbarButtonGroup::make('Heading', ['h1',
-                    'h2',
-                    'h3',
-                    'h4',
-                    'h5',
-                    'h6'])],
+                        'h2',
+                        'h3',
+                        'h4',
+                        'h5',
+                        'h6'])],
                     [ToolbarButtonGroup::make('Alignment', ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'])],
                     'blockquote',
                     'codeBlock',
@@ -61,7 +61,9 @@ class ArticleForm
                 Select::make('status')->options(['draft' => 'Draft', 'published' => 'Published'])->required(),
                 Toggle::make('is_featured'),
                 Toggle::make('is_trending'),
-                DateTimePicker::make('published_at'),
+                DateTimePicker::make('published_at')
+                    ->timezone('Asia/Kathmandu')
+                    ->native(false),
                 DateTimePicker::make('content_updated_at'),
             ])->columnSpanFull(),
 
