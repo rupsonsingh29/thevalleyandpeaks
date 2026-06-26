@@ -13,6 +13,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 
 class ArticleForm
 {
@@ -26,9 +27,32 @@ class ArticleForm
                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
                 TextInput::make('slug')->required()->unique(ignoreRecord: true),
                 Textarea::make('excerpt')->rows(3)->columnSpanFull(),
-                RichEditor::make('content')->required()->columnSpanFull(),
+                RichEditor::make('content')->required()->columnSpanFull()->toolbarButtons([
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strike', 'superscript', 'subscript', 'link',
+                    
+                    [ToolbarButtonGroup::make('Heading', ['h1',
+                    'h2',
+                    'h3',
+                    'h4',
+                    'h5',
+                    'h6'])],
+                    [ToolbarButtonGroup::make('Alignment', ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'])],
+                    'blockquote',
+                    'codeBlock',
+                    'link',
+                    'bulletList',
+                    'orderedList',
+                    'table',
+                    'attachFiles',
+                    'redo',
+                    'undo',
+
+                ]),
                 FileUpload::make('featured_image')->image()->directory('articles')->columnSpanFull(),
-            ])->columns(2),
+            ])->columnSpanFull(),
 
             Section::make('Classification')->schema([
                 Select::make('author_id')->relationship('author', 'name')->required()->searchable(),
@@ -40,7 +64,7 @@ class ArticleForm
                 Toggle::make('is_trending'),
                 DateTimePicker::make('published_at'),
                 DateTimePicker::make('content_updated_at'),
-            ])->columns(2),
+            ])->columnSpanFull(),
 
             Section::make('SEO')->schema([
                 TextInput::make('meta_title')->columnSpanFull(),
