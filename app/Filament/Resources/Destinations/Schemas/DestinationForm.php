@@ -36,7 +36,7 @@ class DestinationForm
                 TextInput::make('country')->visible(fn ($get) => $get('type') === 'international'),
                 Textarea::make('excerpt')->rows(3)->columnSpanFull(),
                 RichEditor::make('content')->columnSpanFull(),
-                FileUpload::make('featured_image')->image()->directory('destinations'),
+                FileUpload::make('featured_image')->image()->disk('public')->directory('destinations'),
                 Toggle::make('is_featured'),
                 TextInput::make('sort_order')->numeric()->default(0),
             ])->columns(2),

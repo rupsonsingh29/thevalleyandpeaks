@@ -23,7 +23,7 @@ class AuthorForm
                 TextInput::make('email')->email(),
                 TextInput::make('title'),
                 Textarea::make('bio')->rows(4)->columnSpanFull(),
-                FileUpload::make('avatar')->image()->directory('authors'),
+                FileUpload::make('avatar')->image()->disk('public')->directory('authors'),
                 TextInput::make('instagram')->url(),
                 TextInput::make('twitter')->url(),
                 TextInput::make('facebook')->url(),

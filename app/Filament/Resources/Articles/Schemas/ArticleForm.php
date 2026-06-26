@@ -50,7 +50,7 @@ class ArticleForm
                     'undo',
 
                 ]),
-                FileUpload::make('featured_image')->image()->directory('articles')->columnSpanFull(),
+                FileUpload::make('featured_image')->image()->disk('public')->directory('articles')->columnSpanFull(),
             ])->columnSpanFull(),
 
             Section::make('Classification')->schema([

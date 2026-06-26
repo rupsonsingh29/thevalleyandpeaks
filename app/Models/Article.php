@@ -53,7 +53,8 @@ class Article extends Model
     public function scopePublished(Builder $query): Builder
     {
         return $query->where('status', 'published')
-            ->whereNotNull('published_at')
+            ->whereNotNull('published_at');
+          
     }
 
     public function scopeFeatured(Builder $query): Builder
