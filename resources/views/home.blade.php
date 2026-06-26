@@ -20,7 +20,7 @@
     </div>
 </section>
 
-@if($featuredDestinations->isNotEmpty())
+{{-- @if($featuredDestinations->isNotEmpty())
 <section class="section">
     <div class="container">
         <div class="section__header">
@@ -38,7 +38,7 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
 @if($latestArticles->isNotEmpty())
 <section class="section section--alt">
@@ -59,7 +59,7 @@
 </section>
 @endif
 
-@if($nepalDestinations->isNotEmpty())
+{{-- @if($nepalDestinations->isNotEmpty())
 <section class="section">
     <div class="container">
         <div class="section__header">
@@ -77,9 +77,9 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
-@if($internationalDestinations->isNotEmpty())
+{{-- @if($internationalDestinations->isNotEmpty())
 <section class="section section--alt">
     <div class="container">
         <div class="section__header">
@@ -96,9 +96,9 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
-@if($trekkingArticles->isNotEmpty())
+{{-- @if($trekkingArticles->isNotEmpty())
 <section class="section">
     <div class="container">
         <div class="section__header">
@@ -112,9 +112,9 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
-@if($foodArticles->isNotEmpty())
+{{-- @if($foodArticles->isNotEmpty())
 <section class="section section--alt">
     <div class="container">
         <div class="section__header">
@@ -128,9 +128,9 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
-@if($hotelArticles->isNotEmpty())
+{{-- @if($hotelArticles->isNotEmpty())
 <section class="section">
     <div class="container">
         <div class="section__header">
@@ -144,9 +144,9 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 
-@if($featuredStories->isNotEmpty())
+{{-- @if($featuredStories->isNotEmpty())
 <section class="section section--alt">
     <div class="container">
         <div class="section__header">
@@ -160,5 +160,5 @@
         </div>
     </div>
 </section>
-@endif
+@endif --}}
 @endsection
