@@ -54,7 +54,6 @@ class Article extends Model
     {
         return $query->where('status', 'published')
             ->whereNotNull('published_at')
-            ->where('published_at', '<=', now());
     }
 
     public function scopeFeatured(Builder $query): Builder

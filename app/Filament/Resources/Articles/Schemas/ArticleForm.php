@@ -32,7 +32,6 @@ class ArticleForm
                     'italic',
                     'underline',
                     'strike', 'superscript', 'subscript', 'link',
-                    
                     [ToolbarButtonGroup::make('Heading', ['h1',
                     'h2',
                     'h3',
