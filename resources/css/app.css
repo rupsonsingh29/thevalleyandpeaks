@@ -170,6 +170,11 @@ h4 {
     white-space: nowrap;
 }
 
+.site-logo img {
+    height: 70px; 
+    width: auto;
+}
+
 .site-logo span {
     color: var(--color-earth);
 }

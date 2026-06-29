@@ -1,7 +1,8 @@
 <header class="site-header">
     <div class="site-header__inner">
         <a href="{{ route('home') }}" class="site-logo">
-            The Valley <span>&</span> Peaks
+            <img src="{{ asset('image/logo/main-logo.png') }}" alt="The Valley & Peaks">
+            {{-- The Valley <span>&</span> Peaks --}}
         </a>
 
         <nav class="site-nav" aria-label="Main navigation">
