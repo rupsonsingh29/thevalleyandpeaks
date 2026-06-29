@@ -23,8 +23,8 @@
                 <ul class="site-footer__links">
                     <li><a href="{{ route('destinations.nepal') }}">Nepal</a></li>
                     <li><a href="{{ route('destinations.international') }}">International</a></li>
-                    <li><a href="{{ route('destinations.show', 'kathmandu') }}">Kathmandu</a></li>
-                    <li><a href="{{ route('destinations.show', 'pokhara') }}">Pokhara</a></li>
+                    {{-- <li><a href="{{ route('destinations.show', 'kathmandu') }}">Kathmandu</a></li>
+                    <li><a href="{{ route('destinations.show', 'pokhara') }}">Pokhara</a></li> --}}
                 </ul>
             </div>
 

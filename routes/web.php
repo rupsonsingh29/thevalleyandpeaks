@@ -29,6 +29,9 @@ Route::prefix('blog')->name('blog.')->group(function () {
 });
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
+// Route::get('/about', fn () => app(PageController::class)->show(
+//     \App\Models\Page::where('slug', 'about-us')->firstOrFail()
+// ))->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
