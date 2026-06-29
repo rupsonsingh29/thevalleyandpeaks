@@ -39,12 +39,12 @@ class DestinationForm
                 FileUpload::make('featured_image')->image()->disk('public')->directory('destinations'),
                 Toggle::make('is_featured'),
                 TextInput::make('sort_order')->numeric()->default(0),
-            ])->columns(2),
+            ])->columnSpanFull(),
 
             Section::make('SEO')->schema([
                 TextInput::make('meta_title')->columnSpanFull(),
                 Textarea::make('meta_description')->rows(2)->columnSpanFull(),
-            ]),
+            ])->columnSpanFull(),
 
             Section::make('FAQs')->schema([
                 Repeater::make('faqs')
@@ -57,7 +57,7 @@ class DestinationForm
                     ->orderColumn('sort_order')
                     ->collapsible()
                     ->columnSpanFull(),
-            ]),
+            ])->columnSpanFull(),
         ]);
     }
 }

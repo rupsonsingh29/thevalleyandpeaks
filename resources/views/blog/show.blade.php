@@ -23,10 +23,22 @@
         </div>
         <h1 class="article-header__title" itemprop="headline">{{ $article->title }}</h1>
         <div class="article-meta">
-            <div class="article-meta__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            {{-- <div class="article-meta__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <div class="article-meta__avatar">{{ substr($article->author->name, 0, 1) }}</div>
                 <span itemprop="name">{{ $article->author->name }}</span>
-            </div>
+            </div> --}}
+            <div class="article-meta__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <div class="article-meta__avatar">
+        @if($article->author->avatar)
+            <img src="{{ Storage::url($article->author->avatar) }}" 
+                 alt="{{ $article->author->name }}"
+                 itemprop="image">
+        @else
+            {{ substr($article->author->name, 0, 1) }}
+        @endif
+    </div>
+    <span itemprop="name">{{ $article->author->name }}</span>
+</div>
             <span>&middot;</span>
             <span>{{ $article->reading_time }} min read</span>
             @if($article->published_at)

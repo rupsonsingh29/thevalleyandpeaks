@@ -26,7 +26,7 @@ class CategoryForm
                 TextInput::make('meta_title')->columnSpanFull(),
                 Textarea::make('meta_description')->rows(2)->columnSpanFull(),
                 TextInput::make('sort_order')->numeric()->default(0),
-            ])->columns(2),
+            ])->columnSpanFull(),
         ]);
     }
 }

@@ -25,7 +25,7 @@ class PageForm
                 TextInput::make('meta_title')->columnSpanFull(),
                 Textarea::make('meta_description')->rows(2)->columnSpanFull(),
                 Toggle::make('is_published')->default(true),
-            ])->columns(2),
+            ])->columnSpanFull(),
         ]);
     }
 }

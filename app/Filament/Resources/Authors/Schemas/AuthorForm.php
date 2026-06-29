@@ -28,7 +28,7 @@ class AuthorForm
                 TextInput::make('twitter')->url(),
                 TextInput::make('facebook')->url(),
                 TextInput::make('linkedin')->url(),
-            ])->columns(2),
+            ])->columnSpanFull(),
         ]);
     }
 }
