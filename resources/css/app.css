@@ -647,10 +647,11 @@ h4 {
 }
 
 .article-layout {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 220px 1fr;
     gap: var(--spacing-xl);
     align-items: start;
+    
 }
 
 .article-toc {
@@ -696,7 +697,7 @@ h4 {
 .article-content {
     font-size: 1.0625rem;
     line-height: 1.8;
-    max-width: var(--max-width-narrow);
+    /* max-width: var(--max-width-narrow); */
 }
 
 .article-content h2 {
