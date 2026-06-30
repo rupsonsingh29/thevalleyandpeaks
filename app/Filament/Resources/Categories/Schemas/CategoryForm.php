@@ -20,8 +20,8 @@ class CategoryForm
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
                 TextInput::make('slug')->required()->unique(ignoreRecord: true),
-                Select::make('type')->options(['nepal' => 'Nepal', 'international' => 'International'])->required(),
-                Select::make('parent_id')->relationship('parent', 'name')->searchable(),
+                Select::make('type')->options(['nepal' => 'Nepal', 'international' => 'International'])->required()->preload(),
+                Select::make('parent_id')->relationship('parent', 'name')->searchable()->preload(),
                 Textarea::make('description')->rows(3)->columnSpanFull(),
                 TextInput::make('meta_title')->columnSpanFull(),
                 Textarea::make('meta_description')->rows(2)->columnSpanFull(),

@@ -54,9 +54,9 @@ class ArticleForm
             ])->columnSpanFull(),
 
             Section::make('Classification')->schema([
-                Select::make('author_id')->relationship('author', 'name')->required()->searchable(),
-                Select::make('category_id')->relationship('category', 'name')->required()->searchable(),
-                Select::make('destinations')->relationship('destinations', 'name')->multiple()->searchable(),
+                Select::make('author_id')->relationship('author', 'name')->required()->searchable()->preload(),
+                Select::make('category_id')->relationship('category', 'name')->required()->searchable()->preload(),
+                Select::make('destinations')->relationship('destinations', 'name')->multiple()->preload(),
                 TextInput::make('reading_time')->numeric()->default(5)->suffix('min'),
                 Select::make('status')->options(['draft' => 'Draft', 'published' => 'Published'])->required(),
                 Toggle::make('is_featured'),

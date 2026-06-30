@@ -29,6 +29,7 @@ class ArticlesTable
                 IconColumn::make('is_trending')->boolean(),
                 TextColumn::make('views')->sortable(),
                 TextColumn::make('published_at')->dateTime()->sortable(),
+                TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->defaultSort('published_at', 'desc')
             ->filters([
