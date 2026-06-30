@@ -15,7 +15,7 @@ class NewsletterSubscribersTable
         return $table
             ->columns([
                 TextColumn::make('email')->searchable()->sortable(),
-                TextColumn::make('name'),
+                // TextColumn::make('name'),
                 TextColumn::make('subscribed_at')->dateTime()->sortable(),
             ])
             ->defaultSort('subscribed_at', 'desc')

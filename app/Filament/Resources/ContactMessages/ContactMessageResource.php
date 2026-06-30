@@ -6,14 +6,15 @@ use App\Filament\Resources\ContactMessages\Pages\CreateContactMessage;
 use App\Filament\Resources\ContactMessages\Pages\EditContactMessage;
 use App\Filament\Resources\ContactMessages\Pages\ListContactMessages;
 use App\Filament\Resources\ContactMessages\Schemas\ContactMessageForm;
+use App\Filament\Resources\ContactMessages\Schemas\ContactMessageInfolist;
 use App\Filament\Resources\ContactMessages\Tables\ContactMessagesTable;
 use App\Models\ContactMessage;
 use BackedEnum;
-use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class ContactMessageResource extends Resource
 {
@@ -21,7 +22,7 @@ class ContactMessageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Engagement';
+    protected static string|UnitEnum|null $navigationGroup = 'Engagement';
 
     protected static ?string $navigationLabel = 'Contact Messages';
 
@@ -46,8 +47,24 @@ class ContactMessageResource extends Resource
     {
         return [
             'index' => ListContactMessages::route('/'),
-            'create' => CreateContactMessage::route('/create'),
-            'edit' => EditContactMessage::route('/{record}/edit'),
+            // 'view' => ViewContactMessage::route('/{record}'),
+            // 'create' => CreateContactMessage::route('/create'),
+            // 'edit' => EditContactMessage::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit($record): bool
+    {
+        return false;
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return ContactMessageInfolist::configure($schema);
     }
 }

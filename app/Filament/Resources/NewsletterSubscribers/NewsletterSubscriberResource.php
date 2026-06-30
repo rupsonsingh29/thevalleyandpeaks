@@ -46,8 +46,18 @@ class NewsletterSubscriberResource extends Resource
     {
         return [
             'index' => ListNewsletterSubscribers::route('/'),
-            'create' => CreateNewsletterSubscriber::route('/create'),
-            'edit' => EditNewsletterSubscriber::route('/{record}/edit'),
+            // 'create' => CreateNewsletterSubscriber::route('/create'),
+            // 'edit' => EditNewsletterSubscriber::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit($record): bool
+    {
+        return false;
     }
 }
