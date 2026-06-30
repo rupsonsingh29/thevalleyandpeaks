@@ -161,16 +161,16 @@ h4 {
     padding: 0 var(--spacing-md);
 }
 
-.site-logo {
+/* .site-logo {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-charcoal);
     letter-spacing: -0.02em;
     white-space: nowrap;
-}
+} */
 
-.site-logo img {
+.site-logo  {
     height: 70px; 
     width: auto;
 }
