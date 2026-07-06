@@ -4,7 +4,7 @@
 @section('meta_description', 'Explore international travel destinations across Asia, Europe, North America, South America, Africa, and Oceania.')
 
 @section('content')
-<section class="hero" style="padding: 3rem 0;">
+<section class="hero" style="padding: 3rem 0; background-image: url('{{ asset('image/international.jpg') }}')">
     <div class="container">
         <div class="hero__content">
             <p class="hero__eyebrow">Worldwide</p>

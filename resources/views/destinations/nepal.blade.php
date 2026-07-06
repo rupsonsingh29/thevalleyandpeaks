@@ -4,7 +4,7 @@
 @section('meta_description', 'Complete travel guides to Kathmandu, Pokhara, Mustang, Everest Region, Annapurna, and more Nepal destinations.')
 
 @section('content')
-<section class="hero" style="padding: 3rem 0;">
+<section class="hero" style="padding: 3rem 0; background-image: url('{{ asset('image/nepal.jpg') }}')">
     <div class="container">
         <div class="hero__content">
             <p class="hero__eyebrow">Nepal</p>

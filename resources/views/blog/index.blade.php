@@ -3,8 +3,8 @@
 @section('title', 'Travel Blog | The Valley & Peaks')
 @section('meta_description', 'Travel guides, trekking tips, food stories, hotel reviews, and cultural insights from Nepal and around the world.')
 
-@section('content')
-<section class="hero" style="padding: 3rem 0;">
+@section('content') 
+<section class="hero" style="padding: 3rem 0; background-image: url('{{ asset('image/nepal-2.jpg') }}')">
     <div class="container">
         <div class="hero__content">
             <p class="hero__eyebrow">Publication</p>

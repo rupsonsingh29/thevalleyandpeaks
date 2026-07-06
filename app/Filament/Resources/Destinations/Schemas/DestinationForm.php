@@ -8,6 +8,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -35,7 +36,29 @@ class DestinationForm
                 ])->visible(fn ($get) => $get('type') === 'international'),
                 TextInput::make('country')->visible(fn ($get) => $get('type') === 'international'),
                 Textarea::make('excerpt')->rows(3)->columnSpanFull(),
-                RichEditor::make('content')->columnSpanFull(),
+                 RichEditor::make('content')->required()->columnSpanFull()->toolbarButtons([
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strike', 'superscript', 'subscript', 'link',
+                    [ToolbarButtonGroup::make('Heading', ['h1',
+                        'h2',
+                        'h3',
+                        'h4',
+                        'h5',
+                        'h6'])],
+                    [ToolbarButtonGroup::make('Alignment', ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'])],
+                    'blockquote',
+                    'codeBlock',
+                    'link',
+                    'bulletList',
+                    'orderedList',
+                    'table',
+                    'attachFiles',
+                    'redo',
+                    'undo',
+
+                ]),
                 FileUpload::make('featured_image')->image()->disk('public')->directory('destinations'),
                 Toggle::make('is_featured'),
                 TextInput::make('sort_order')->numeric()->default(0),

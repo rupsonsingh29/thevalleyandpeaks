@@ -1,4 +1,4 @@
-<nav class="breadcrumbs container" aria-label="Breadcrumb">
+<nav class="breadcrumbs " aria-label="Breadcrumb">
     <ol>
         @foreach($items as $item)
             <li>
