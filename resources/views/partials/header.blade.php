@@ -18,11 +18,11 @@
                 <li><a href="{{ route('about') }}"
                         class="site-nav__link {{ request()->routeIs('about') ? 'site-nav__link--active' : '' }}">About</a>
                 </li>
-                <li class="mobile-search">
+                {{-- <li class="mobile-search">
                     <form action="{{ route('search') }}" method="GET">
                         <input type="search" name="q" placeholder="Search..." value="{{ request('q') }}">
                     </form>
-                </li>
+                </li> --}}
                 {{-- <li><a href="{{ route('destinations.index') }}"
                         class="site-nav__link {{ request()->routeIs('destinations.*') ? 'site-nav__link--active' : '' }}">Destinations</a>
                 </li> --}}
@@ -62,6 +62,7 @@
         const header = document.querySelector('.site-header');
         const searchToggle = document.querySelector('.search-toggle');
         const searchForm = document.querySelector('.search-form');
+        const siteLogo = document.querySelector('.site-logo');
         const searchInput = searchForm.querySelector('input');
 
         const handleScroll = () => {
@@ -77,6 +78,7 @@
 
         searchToggle.addEventListener('click', () => {
             searchForm.classList.toggle('active');
+            siteLogo.classList.toggle('active');
 
             if (searchForm.classList.contains('active')) {
                 setTimeout(() => searchInput.focus(), 300);

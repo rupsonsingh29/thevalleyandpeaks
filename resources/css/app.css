@@ -182,7 +182,7 @@ h4 {
 .site-nav {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
 }
 
 .site-nav__list {
@@ -616,7 +616,7 @@ h4 {
     color: var(--color-text-light);
 }
 
-.about-content > *:first-child {
+.about-content>*:first-child {
     margin-top: 0;
 }
 
@@ -1256,11 +1256,16 @@ h4 {
 
 @media (max-width: 768px) {
     .site-nav__search {
-        display: none;
+        /* display: none; */
     }
 
     .site-logo {
         height: 45px;
+        width: auto;
+    }
+
+    .site-logo.active {
+        height: 0px;
         width: auto;
     }
 
@@ -1319,11 +1324,11 @@ h4 {
         width: 120px;
     }
 
-     .article-content {
+    .article-content {
         overflow-x: auto;
     }
 
-     .article-content table {
+    .article-content table {
         min-width: 600px;
         display: table;
     }
