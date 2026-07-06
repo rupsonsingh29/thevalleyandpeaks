@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title', 'About Rupson Singh | The Valley & Peaks')
 @section('meta_description', 'Meet Rupson Singh, founder of The Valley & Peaks — a hospitality graduate from Patan, Nepal sharing authentic travel guides and food stories.')
@@ -26,6 +26,31 @@
 
             <p>The Valley & Peaks is more than a travel blog. It is a growing collection of stories, guides, and resources designed to inspire meaningful travel experiences.</p>
         </div>
+    </div>
+</section>
+@endsection --}}
+
+
+@extends('layouts.app')
+
+@section('title', ($page->meta_title ?? $page->title).' | The Valley & Peaks')
+@section('meta_description', 'Meet Rupson Singh, founder of The Valley & Peaks — a hospitality graduate from Patan, Nepal sharing authentic travel guides and food stories.')
+
+
+@section('content')
+<section class="about-hero">
+    <div class="container">
+        <h1>{{ $page->title }}</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-content">
+            {!! $page->content !!}
+        </div>
+
+        @include('partials.faq', ['faqs' => $page->faqs])
     </div>
 </section>
 @endsection

@@ -46,6 +46,13 @@ class PageController extends Controller
             $schemas[] = $this->schema->faq($page->faqs);
         }
 
-        return view('pages.show', compact('page', 'breadcrumbs', 'schemas'));
+        $view = match ($page->slug) {
+            'about-us' => 'pages.about',
+            'privacy' => 'pages.show',
+            default => 'pages.show',
+        };
+
+        // return view('pages.show', compact('page', 'breadcrumbs', 'schemas'));
+        return view($view, compact('page', 'breadcrumbs', 'schemas'));
     }
 }
