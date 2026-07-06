@@ -115,6 +115,7 @@ h2 {
 
 h3 {
     font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+     margin-bottom: var(--spacing-md);
 }
 
 h4 {
@@ -765,14 +766,17 @@ h4 {
 }
 
 .article-toc {
-    position: sticky;
+    /* position: sticky; */
+    background-color: var(--color-bg);
     top: calc(var(--header-height) + 2rem);
     font-size: 0.875rem;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.article-toc h4 {
+.article-toc h3 {
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -802,6 +806,31 @@ h4 {
 
 .article-toc .toc-h3 {
     padding-left: 1rem;
+}
+
+.article-toc .toc-level-1 {
+    padding-left: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.article-toc .toc-level-2 {
+    padding-left: 0.75rem;
+    font-weight: 600;
+    font-size: 0.8525rem;
+}
+
+.article-toc .toc-level-3 {
+    padding-left: 1.5rem;
+    font-weight: 500;
+    font-size: 0.8125rem;
+}
+
+.article-toc .toc-level-4 {
+    padding-left: 2.25rem;
+    font-weight: 400;
+    font-size: 0.75rem;
+    /* opacity: 0.85; */
 }
 
 .article-content {

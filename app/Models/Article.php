@@ -84,7 +84,7 @@ class Article extends Model
 
     public function getTableOfContents(): array
     {
-        preg_match_all('/<h([2-4])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h\1>/i', $this->content, $matches, PREG_SET_ORDER);
+        preg_match_all('/<h([1-4])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h\1>/i', $this->content, $matches, PREG_SET_ORDER);
 
         return collect($matches)->map(fn ($match) => [
             'level' => (int) $match[1],

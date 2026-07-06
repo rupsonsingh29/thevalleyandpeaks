@@ -2,13 +2,15 @@
 
 namespace App\Providers;
 
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentView;
+use Filament\Tables\Columns\TextColumn;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\ServiceProvider;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Tables\Columns\TextColumn;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -45,5 +47,10 @@ class AppServiceProvider extends ServiceProvider
         TextColumn::configureUsing(function (TextColumn $component): void {
             $component->timezone(session('timezone', config('app.timezone')));
         });
+
+        FilamentAsset::register([
+            Js::make('rich-content-plugins/heading-id', __DIR__.'/../../resources/js/dist/filament/rich-content-plugins/heading-id.js')
+                ->loadedOnRequest(),
+        ]);
     }
 }

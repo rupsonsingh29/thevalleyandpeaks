@@ -72,10 +72,13 @@
             <div class="article-layout">
                 @if(count($tableOfContents) > 0)
                     <aside class="article-toc" aria-label="Table of contents">
-                        <h4>Contents</h4>
+                        <h3>In This Article :</h3>
                         <ul>
                             @foreach($tableOfContents as $item)
-                                <li class="{{ $item['level'] === 3 ? 'toc-h3' : '' }}">
+                                {{-- <li class="{{ $item['level'] === 3 ? 'toc-h3' : '' }}">
+                                    <a href="#{{ $item['id'] }}">{{ $item['text'] }}</a>
+                                </li> --}}
+                                <li class="toc-level-{{ $item['level'] }}">
                                     <a href="#{{ $item['id'] }}">{{ $item['text'] }}</a>
                                 </li>
                             @endforeach

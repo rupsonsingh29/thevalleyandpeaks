@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Articles\Schemas;
 
+use App\Filament\RichEditorPlugins\HeadingIdPlugin;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -14,6 +15,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+
 
 class ArticleForm
 {
@@ -49,6 +51,8 @@ class ArticleForm
                     'redo',
                     'undo',
 
+                ])->plugins([
+                    HeadingIdPlugin::make(),
                 ]),
                 FileUpload::make('featured_image')->image()->disk('public')->directory('articles')->columnSpanFull(),
             ])->columnSpanFull(),
