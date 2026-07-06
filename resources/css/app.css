@@ -737,6 +737,36 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+    display: block;
+}
+
+.article-content th,
+.article-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-content th {
+    font-weight: 600;
+    background: #f8f9fa;
+}
+
+.article-content tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* Remove paragraph spacing inside table cells */
+.article-content table p {
+    margin: 0;
+}
+
 .article-tags {
     display: flex;
     flex-wrap: wrap;
@@ -1189,5 +1219,14 @@ h4 {
 
     .search-form input {
         width: 120px;
+    }
+
+     .article-content {
+        overflow-x: auto;
+    }
+
+     .article-content table {
+        min-width: 600px;
+        display: table;
     }
 }
