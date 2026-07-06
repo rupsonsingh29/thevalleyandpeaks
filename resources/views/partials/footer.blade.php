@@ -31,8 +31,8 @@
             <div>
                 <h4 class="site-footer__heading">Legal</h4>
                 <ul class="site-footer__links">
-                    <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
-                    <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                    {{-- <li><a href="{{ route('privacy') }}">Privacy Policy</a></li> --}}
+                    {{-- <li><a href="{{ route('terms') }}">Terms & Conditions</a></li> --}}
                     <li><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
                     <li><a href="{{ route('affiliate') }}">Affiliate Disclosure</a></li>
                 </ul>
