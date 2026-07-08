@@ -18,7 +18,7 @@ class BlogController extends Controller
             ->paginate(12);
 
         $nepalCategories = Category::nepal()->whereNull('parent_id')->with('children')->orderBy('sort_order')->get();
-        $internationalCategories = Category::international()->orderBy('sort_order','asec')->get();
+        $internationalCategories = Category::international()->orderBy('sort_order','asc')->get();
         $trendingArticles = Article::published()->trending()->latest()->take(5)->get();
         $popularArticles = Article::published()->orderByDesc('views')->take(5)->get();
 
