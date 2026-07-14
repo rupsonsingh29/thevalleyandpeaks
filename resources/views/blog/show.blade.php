@@ -75,9 +75,7 @@
                         <h3>In This Article :</h3>
                         <ul>
                             @foreach($tableOfContents as $item)
-                                {{-- <li class="{{ $item['level'] === 3 ? 'toc-h3' : '' }}">
-                                    <a href="#{{ $item['id'] }}">{{ $item['text'] }}</a>
-                                </li> --}}
+                                
                                 <li class="toc-level-{{ $item['level'] }}">
                                     <a href="#{{ $item['id'] }}">{{ $item['text'] }}</a>
                                 </li>
