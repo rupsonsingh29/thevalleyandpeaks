@@ -36,6 +36,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.subscribe');
 
 Route::get('/privacy-policy', fn () => app(PageController::class)->show(
     \App\Models\Page::where('slug', 'privacy-policy')->firstOrFail()
