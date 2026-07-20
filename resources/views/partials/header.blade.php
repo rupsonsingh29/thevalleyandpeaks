@@ -63,57 +63,55 @@
                             <div class="mega-menu__col">
                                 <h4>Nepal — Regions</h4>
                                 <ul>
-                                    <li><a href="#">Kathmandu Valley</a></li>
-                                    <li><a href="#">Everest Region</a></li>
-                                    <li><a href="#">Annapurna Region</a></li>
-                                    <li><a href="#">Langtang Region</a></li>
-                                    <li><a href="#">Mustang</a></li>
-                                    <li><a href="#">Chitwan</a></li>
-                                    <li><a href="#">Lumbini</a></li>
-                                    <li><a href="#">Rara</a></li>
-                                    <li><a href="#">Dolpo</a></li>
-                                    <li><a href="#">Ilam</a></li>
-                                    <li><a href="#">Koshi Tappu</a></li>
-                                    <li><a href="#">Far West Nepal</a></li>
+                                    @forelse ($headerNepalByType->get('region', []) as $destination)
+                                        <li><a
+                                                href="{{ route('destinations.show', $destination) }}">{{ $destination->name }}</a>
+                                        </li>
+                                    @empty
+                                        <li class="text-muted">Coming soon</li>
+                                    @endforelse
                                 </ul>
                             </div>
+
                             <div class="mega-menu__col">
                                 <h4>Nepal — Cities</h4>
                                 <ul>
-                                    <li><a href="#">Kathmandu</a></li>
-                                    <li><a href="#">Patan</a></li>
-                                    <li><a href="#">Bhaktapur</a></li>
-                                    <li><a href="#">Pokhara</a></li>
-                                    <li><a href="#">Janakpur</a></li>
-                                    <li><a href="#">Bandipur</a></li>
-                                    <li><a href="#">Tansen</a></li>
-                                    <li><a href="#">Gorkha</a></li>
-                                    <li><a href="#">Dharan</a></li>
-                                    <li><a href="#">Nepalgunj</a></li>
+                                    @forelse ($headerNepalByType->get('cities', []) as $destination)
+                                        <li><a
+                                                href="{{ route('destinations.show', $destination) }}">{{ $destination->name }}</a>
+                                        </li>
+                                    @empty
+                                        <li class="text-muted">Coming soon</li>
+                                    @endforelse
                                 </ul>
                             </div>
+
                             <div class="mega-menu__col">
                                 <h4>More Nepal</h4>
                                 <ul>
-                                    <li><a href="#">National Parks</a></li>
-                                    <li><a href="#">Lakes</a></li>
-                                    <li><a href="#">Mountains</a></li>
-                                    <li><a href="#">Valleys</a></li>
-                                    <li><a href="#">UNESCO Sites</a></li>
-                                    <li><a href="#">Villages</a></li>
-                                    <li><a href="#">Hidden Places</a></li>
+                                    @forelse ($headerNepalByType->get('others', []) as $destination)
+                                        <li><a
+                                                href="{{ route('destinations.show', $destination) }}">{{ $destination->name }}</a>
+                                        </li>
+                                    @empty
+                                        <li class="text-muted">Coming soon</li>
+                                    @endforelse
                                 </ul>
+                                <a href="{{ route('destinations.nepal') }}" class="mega-menu__viewall">View all Nepal
+                                    destinations →</a>
                             </div>
+
                             {{-- <div class="mega-menu__col">
                                 <h4>International</h4>
                                 <ul>
-                                    <li><a href="#">Bhutan</a></li>
-                                    <li><a href="#">India</a></li>
-                                    <li><a href="#">Pakistan</a></li>
-                                    <li><a href="#">Tibet</a></li>
-                                    <li><a href="#">Sri Lanka</a></li>
+                                    @foreach ($headerInternational as $destination)
+                                        <li><a
+                                                href="{{ route('destinations.show', $destination) }}">{{ $destination->name }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
-                                <a href="{{ route('destinations.international') }}" class="mega-menu__viewall">View all destinations →</a>
+                                <a href="{{ route('destinations.international') }}" class="mega-menu__viewall">View all
+                                    destinations →</a>
                             </div> --}}
                         </div>
                     </div>
@@ -311,12 +309,14 @@
             <div class="site-nav__search">
                 <button class="search-toggle" type="button" aria-label="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 21L16.65 16.65M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z"
+                        <path
+                            d="M21 21L16.65 16.65M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
                 <form action="{{ route('search') }}" method="GET" class="search-form">
-                    <input type="search" name="q" placeholder="Search..." value="{{ request('q') }}" aria-label="Search">
+                    <input type="search" name="q" placeholder="Search..." value="{{ request('q') }}"
+                        aria-label="Search">
                 </form>
             </div>
 

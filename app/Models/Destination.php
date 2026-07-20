@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Destination extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'type', 'continent', 'country',
+        'name', 'slug', 'type','nepal_type', 'continent', 'country',
         'excerpt', 'content', 'featured_image',
         'meta_title', 'meta_description', 'is_featured', 'sort_order',
     ];

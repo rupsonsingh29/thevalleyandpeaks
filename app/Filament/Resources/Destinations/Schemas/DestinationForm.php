@@ -5,10 +5,10 @@ namespace App\Filament\Resources\Destinations\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -26,6 +26,14 @@ class DestinationForm
                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
                 TextInput::make('slug')->required()->unique(ignoreRecord: true),
                 Select::make('type')->options(['nepal' => 'Nepal', 'international' => 'International'])->required()->live(),
+                Select::make('nepal_type')
+                    ->options([
+                        'region' => 'Region',
+                        'cities' => 'Cities',
+                        'others' => 'Others',
+                    ])
+                    ->visible(fn ($get) => $get('type') === 'nepal')
+                    ->required(fn ($get) => $get('type') === 'nepal'),
                 Select::make('continent')->options([
                     'asia' => 'Asia',
                     'europe' => 'Europe',
@@ -36,7 +44,7 @@ class DestinationForm
                 ])->visible(fn ($get) => $get('type') === 'international'),
                 TextInput::make('country')->visible(fn ($get) => $get('type') === 'international'),
                 Textarea::make('excerpt')->rows(3)->columnSpanFull(),
-                 RichEditor::make('content')->required()->columnSpanFull()->toolbarButtons([
+                RichEditor::make('content')->required()->columnSpanFull()->toolbarButtons([
                     'bold',
                     'italic',
                     'underline',
