@@ -1,46 +1,4 @@
-{{-- <header class="site-header">
-    <div class="site-header__inner">
-        <a href="{{ route('home') }}">
-            <img src="{{ asset('image/logo/main-logo.png') }}" alt="The Valley & Peaks" class="site-logo">
 
-        </a>
-
-        <nav class="site-nav" aria-label="Main navigation">
-            <ul class="site-nav__list">
-                <li><a href="{{ route('home') }}"
-                        class="site-nav__link {{ request()->routeIs('home') ? 'site-nav__link--active' : '' }}">Home</a>
-                </li>
-                <li><a href="{{ route('destinations.nepal') }}" class="site-nav__link">Nepal</a></li>
-                <li><a href="{{ route('destinations.international') }}" class="site-nav__link">International</a></li>
-                <li><a href="{{ route('blog.index') }}"
-                        class="site-nav__link {{ request()->routeIs('blog.*') ? 'site-nav__link--active' : '' }}">Blog</a>
-                </li>
-                <li><a href="{{ route('about') }}"
-                        class="site-nav__link {{ request()->routeIs('about') ? 'site-nav__link--active' : '' }}">About</a>
-                </li>
-            </ul>
-            <div class="site-nav__search">
-                <button class="search-toggle" type="button" aria-label="Search">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path
-                            d="M21 21L16.65 16.65M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-
-                <form action="{{ route('search') }}" method="GET" class="search-form">
-                    <input type="search" name="q" placeholder="Search..." value="{{ request('q') }}"
-                        aria-label="Search">
-                </form>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle menu" type="button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </div>
-</header> --}}
 
 <header class="site-header">
     <div class="site-header__inner">
@@ -57,7 +15,7 @@
 
                 {{-- Destinations --}}
                 <li class="has-mega">
-                    <a href="#" class="site-nav__link">Destinations</a>
+                    <a href="#" class="site-nav__link {{ request()->routeIs('destinations.*') ? 'site-nav__link--active' : '' }}">Destinations</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
                             <div class="mega-menu__col">
@@ -105,9 +63,9 @@
                                 <h4>International</h4>
                                 <ul>
                                     @foreach ($headerInternational as $destination)
-                                        <li><a
-                                                href="{{ route('destinations.show', $destination) }}">{{ $destination->name }}</a>
-                                        </li>
+                                    <li><a href="{{ route('destinations.show', $destination) }}">{{ $destination->name
+                                            }}</a>
+                                    </li>
                                     @endforeach
                                 </ul>
                                 <a href="{{ route('destinations.international') }}" class="mega-menu__viewall">View all
@@ -118,7 +76,7 @@
                 </li>
 
                 {{-- Experiences --}}
-                <li class="has-mega">
+                {{-- <li class="has-mega">
                     <a href="#" class="site-nav__link">Experiences</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
@@ -157,10 +115,10 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 {{-- Plan Your Trip --}}
-                <li class="has-mega">
+                {{-- <li class="has-mega">
                     <a href="#" class="site-nav__link">Plan Your Trip</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
@@ -196,10 +154,10 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 {{-- Tours --}}
-                <li class="has-mega">
+                {{-- <li class="has-mega">
                     <a href="#" class="site-nav__link">Tours</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
@@ -225,25 +183,34 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 {{-- Blog --}}
                 <li class="has-mega">
-                    <a href="{{ route('blog.index') }}"
+                    <a href="#"
                         class="site-nav__link {{ request()->routeIs('blog.*') ? 'site-nav__link--active' : '' }}">Blog</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
+                            
                             <div class="mega-menu__col">
                                 <h4>Categories</h4>
                                 <ul>
-                                    <li><a href="#">Destination Guides</a></li>
-                                    <li><a href="#">Travel Tips</a></li>
-                                    <li><a href="#">History</a></li>
-                                    <li><a href="#">Culture</a></li>
-                                    <li><a href="#">Food</a></li>
+                                    @foreach ($headerNepalCategories as $category)
+                                        <li>
+                                            <a href="{{ route('blog.category', $category) }}">{{ $category->name }}</a>
+                                            @if ($category->children->isNotEmpty())
+                                                <ul class="mega-menu__submenu">
+                                                    @foreach ($category->children as $child)
+                                                        <li><a href="{{ route('blog.category', $child) }}">{{ $child->name }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
-                            <div class="mega-menu__col">
+                            {{-- <div class="mega-menu__col">
                                 <h4>More</h4>
                                 <ul>
                                     <li><a href="#">Photography</a></li>
@@ -252,13 +219,13 @@
                                     <li><a href="#">Trekking</a></li>
                                     <li><a href="#">Adventure</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </li>
 
                 {{-- Resources --}}
-                <li class="has-mega">
+                {{-- <li class="has-mega">
                     <a href="#" class="site-nav__link">Resources</a>
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
@@ -281,10 +248,10 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 {{-- About --}}
-                <li class="has-mega">
+                {{-- <li class="has-mega">
                     <a href="{{ route('about') }}"
                         class="site-nav__link {{ request()->routeIs('about') ? 'site-nav__link--active' : '' }}">About</a>
                     <div class="mega-menu">
@@ -301,6 +268,11 @@
                             </div>
                         </div>
                     </div>
+                </li> --}}
+
+                <li>
+                     <a href="{{ route('about') }}"
+                        class="site-nav__link {{ request()->routeIs('about') ? 'site-nav__link--active' : '' }}">About</a>
                 </li>
 
                 <li><a href="#" class="site-nav__link">Contact</a></li>
