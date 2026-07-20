@@ -1,5 +1,3 @@
-
-
 <header class="site-header">
     <div class="site-header__inner">
         <a href="{{ route('home') }}">
@@ -9,13 +7,17 @@
         <nav class="site-nav" aria-label="Main navigation">
             <ul class="site-nav__list">
                 <li>
-                    <a href="{{ route('home') }}"
-                        class="site-nav__link {{ request()->routeIs('home') ? 'site-nav__link--active' : '' }}">Home</a>
+                    <a href="{{ route('home') }}" class="site-nav__link">Home</a>
+                    {{-- class="site-nav__link {{ request()->routeIs('home') ? 'site-nav__link--active' : ''
+                    }}">Home</a> --}}
                 </li>
 
                 {{-- Destinations --}}
                 <li class="has-mega">
-                    <a href="#" class="site-nav__link {{ request()->routeIs('destinations.*') ? 'site-nav__link--active' : '' }}">Destinations</a>
+                    <a href="#" class="site-nav__link ">Destinations</a>
+                    {{-- <a href="#"
+                        class="site-nav__link {{ request()->routeIs('destinations.*') ? 'site-nav__link--active' : '' }}">Destinations</a>
+                    --}}
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
                             <div class="mega-menu__col">
@@ -74,6 +76,17 @@
                         </div>
                     </div>
                 </li>
+
+                <li>
+                    <a href="{{ route('under-construction') }}" class="site-nav__link">Experiences</a>
+                </li>
+                <li>
+                    <a href="{{ route('under-construction') }}" class="site-nav__link">Plan Your Trip</a>
+                </li>
+                <li>
+                    <a href="{{ route('under-construction') }}" class="site-nav__link">Tours</a>
+                </li>
+               
 
                 {{-- Experiences --}}
                 {{-- <li class="has-mega">
@@ -187,11 +200,12 @@
 
                 {{-- Blog --}}
                 <li class="has-mega">
-                    <a href="#"
-                        class="site-nav__link {{ request()->routeIs('blog.*') ? 'site-nav__link--active' : '' }}">Blog</a>
+                    <a href="#" class="site-nav__link">Blog</a>
+                    {{-- class="site-nav__link {{ request()->routeIs('blog.*') ? 'site-nav__link--active' : ''
+                    }}">Blog</a> --}}
                     <div class="mega-menu">
                         <div class="mega-menu__inner">
-                            
+
                             <div class="mega-menu__col">
                                 <h4>Categories</h4>
                                 <ul>
@@ -222,6 +236,10 @@
                             </div> --}}
                         </div>
                     </div>
+                </li>
+
+                <li>
+                    <a href="{{ route('under-construction') }}" class="site-nav__link">Resources</a>
                 </li>
 
                 {{-- Resources --}}
@@ -271,11 +289,13 @@
                 </li> --}}
 
                 <li>
-                     <a href="{{ route('about') }}"
+                    <a href="{{ route('about') }}" {{--
                         class="site-nav__link {{ request()->routeIs('about') ? 'site-nav__link--active' : '' }}">About</a>
+                    --}}
+                    class="site-nav__link ">About</a>
                 </li>
 
-                <li><a href="#" class="site-nav__link">Contact</a></li>
+                <li><a href="{{ route('under-construction') }}"  class="site-nav__link">Contact</a></li>
             </ul>
 
             <div class="site-nav__search">

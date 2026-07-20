@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
+Route::get('/services', [HomeController::class, 'underConstruction'])->name('under-construction');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('destinations')->name('destinations.')->group(function () {

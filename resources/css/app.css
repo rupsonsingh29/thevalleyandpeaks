@@ -332,6 +332,12 @@ h4 {
     pointer-events: auto;
 }
 
+.has-mega:hover > .site-nav__link,
+.has-mega:focus-within > .site-nav__link {
+    color: var(--color-charcoal);
+    border-bottom-color: var(--color-earth);
+}
+
 .mega-menu__inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -1703,6 +1709,25 @@ h4 {
     background: var(--color-earth);
     color: var(--color-white);
     border-color: var(--color-earth);
+}
+
+/* Under Construction */
+.under-construction {
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #f59e0b;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 /* Responsive */

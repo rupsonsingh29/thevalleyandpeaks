@@ -34,7 +34,6 @@ class HomeController extends Controller
             $this->schema->website(),
         ];
 
-        
         return view('home', compact(
             // 'featuredDestinations',
             'latestArticles',
@@ -47,5 +46,10 @@ class HomeController extends Controller
             // 'trendingArticles',
             'schemas',
         ));
+    }
+
+    public function underConstruction()
+    {
+        return view('under-construction');
     }
 }
