@@ -553,6 +553,33 @@ h4 {
     grid-template-columns: repeat(4, 1fr);
 }
 
+
+/* Horizontal Scroll */
+.scroll-row {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem; /* room for scrollbar so it doesn't clip card shadows */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+}
+
+.scroll-row__item {
+    flex: 0 0 auto;
+    width: 280px; /* adjust to your card's ideal width */
+    scroll-snap-align: start;
+}
+
+/* Optional: hide scrollbar visually but keep it scrollable */
+.scroll-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
 /* Cards
 .card {
     background: var(--color-white);

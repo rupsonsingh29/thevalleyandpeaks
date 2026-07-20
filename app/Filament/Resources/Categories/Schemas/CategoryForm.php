@@ -8,6 +8,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\FileUpload;
 
 class CategoryForm
 {
@@ -23,6 +24,7 @@ class CategoryForm
                 Select::make('type')->options(['nepal' => 'Nepal', 'international' => 'International'])->required()->preload(),
                 Select::make('parent_id')->relationship('parent', 'name')->searchable()->preload(),
                 Textarea::make('description')->rows(3)->columnSpanFull(),
+                FileUpload::make('featured_image')->image()->disk('public')->directory('categories'),
                 TextInput::make('meta_title')->columnSpanFull(),
                 Textarea::make('meta_description')->rows(2)->columnSpanFull(),
                 TextInput::make('sort_order')->numeric()->default(0),

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'type', 'parent_id', 'description',
+        'name', 'slug','featured_image', 'type', 'parent_id', 'description',
         'meta_title', 'meta_description', 'sort_order',
     ];
 

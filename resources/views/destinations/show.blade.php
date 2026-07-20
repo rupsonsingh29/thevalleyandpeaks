@@ -25,20 +25,22 @@
         </div>
     </div>
 
-    <div class="container container--narrow">
+    <div class="container ">
         <div class="article-content">
             {!! $destination->content !!}
         </div>
 
         @include('partials.faq', ['faqs' => $destination->faqs])
     </div>
+
+  
 </article>
 
 @if($articles->isNotEmpty())
-<section class="section section--alt">
+<section class="section " style="background:  var(--color-bg-alt)">
     <div class="container">
         <div class="section__header">
-            <h2 class="section__title">Guides for {{ $destination->name }}</h2>
+            <h2 class="section__title">Blogs for {{ $destination->name }}</h2>
         </div>
         <div class="grid grid--3">
             @foreach($articles as $article)
@@ -55,9 +57,12 @@
         <div class="section__header">
             <h2 class="section__title">Related Destinations</h2>
         </div>
-        <div class="grid grid--4">
+     
+        <div class="scroll-row">
             @foreach($relatedDestinations as $related)
-                <x-destination-card :destination="$related" />
+                <div class="scroll-row__item">
+                    <x-destination-card :destination="$related" />
+                </div>
             @endforeach
         </div>
     </div>
