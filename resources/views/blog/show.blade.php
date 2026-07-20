@@ -50,7 +50,7 @@
                         Updated {{ $article->content_updated_at->format('F j, Y') }}
                     </time>
                 @endif
-                
+
             </div>
         </header>
 
@@ -163,7 +163,7 @@
                 var dismissedAt = parseInt(raw, 10);
                 var elapsedDays = (Date.now() - dismissedAt) / (1000 * 60 * 60 * 24);
                 return elapsedDays < SNOOZE_DAYS;
-               
+
             }
 
             function openPopup() {
@@ -195,6 +195,11 @@
             if (!dismissedRecently()) {
                 setTimeout(openPopup, DELAY_MS);
             }
+
+            document.querySelectorAll('.article-content a').forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
         })();
     </script>
 @endsection
