@@ -77,15 +77,15 @@
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="{{ route('under-construction') }}" class="site-nav__link">Experiences</a>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="{{ route('under-construction') }}" class="site-nav__link">Plan Your Trip</a>
                 </li>
                 <li>
                     <a href="{{ route('under-construction') }}" class="site-nav__link">Tours</a>
-                </li>
+                </li> --}}
                
 
                 {{-- Experiences --}}
@@ -238,9 +238,6 @@
                     </div>
                 </li>
 
-                <li>
-                    <a href="{{ route('under-construction') }}" class="site-nav__link">Resources</a>
-                </li>
 
                 {{-- Resources --}}
                 {{-- <li class="has-mega">

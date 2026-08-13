@@ -4,8 +4,12 @@
             <div>
                 <div class="site-footer__brand">The Valley & Peaks</div>
                 <p class="site-footer__desc">
-                    Authentic travel guides, destination insights, and unforgettable adventures from Nepal and around the world.
+                    Authentic travel guides, destination insights, and unforgettable adventures from Nepal and around
+                    the world.
                 </p>
+                <a href="mailto:info@thevalleyandpeaks.com" class="site-footer__email">
+                    info@thevalleyandpeaks.com
+                </a>
             </div>
 
             <div>
