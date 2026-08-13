@@ -4,7 +4,7 @@
 @section('meta_description', 'Get in touch with The Valley & Peaks for collaborations, partnerships, and travel-related inquiries.')
 
 @section('content')
-<section class="hero" style="padding: 3rem 0;">
+<section class="hero" style="background-image: url('{{ asset('image/nepal.jpg') }}');padding: 3rem 0;" >
     <div class="container">
         <div class="hero__content">
             <p class="hero__eyebrow">Get in Touch</p>
@@ -20,7 +20,7 @@
             <div class="contact-info">
                 <div class="contact-info__item">
                     <div class="contact-info__label">Email</div>
-                    <p><a href="mailto:hello@thevalleyandpeaks.com">hello@thevalleyandpeaks.com</a></p>
+                    <p><a href="mailto:info@thevalleyandpeaks.com">info@thevalleyandpeaks.com</a></p>
                 </div>
 
                 <div class="contact-info__item">
@@ -45,8 +45,8 @@
 
                 <div class="social-links">
                     <a href="https://instagram.com/thevalleyandpeaks" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://facebook.com/thevalleyandpeaks" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://twitter.com/thevalleyandpeaks" target="_blank" rel="noopener">Twitter</a>
+                    {{-- <a href="https://facebook.com/thevalleyandpeaks" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/thevalleyandpeaks" target="_blank" rel="noopener">Twitter</a> --}}
                 </div>
             </div>
 

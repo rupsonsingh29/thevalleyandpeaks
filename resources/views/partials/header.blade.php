@@ -292,7 +292,7 @@
                     class="site-nav__link ">About</a>
                 </li>
 
-                <li><a href="{{ route('under-construction') }}"  class="site-nav__link">Contact</a></li>
+                <li><a href="{{ route('contact') }}"  class="site-nav__link">Contact</a></li>
             </ul>
 
             <div class="site-nav__search">
